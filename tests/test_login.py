@@ -29,7 +29,7 @@ class TestLoginAPI:
         login, password = get_invalid_credentials
         client = APIClient()
         response = client.login(login, password)
-        assert_status_code(response, 404)
+        assert_status_code(response, 403)
 
     @allure.title('Успешная авторизация для новых приставок')
     @allure.description('Авторизация по методу /v2/login с валидным паролем возвращает ответ 200')
